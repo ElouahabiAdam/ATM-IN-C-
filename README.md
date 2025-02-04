@@ -1,98 +1,46 @@
-#include<iostream>
-#include<string>
-using namespace std;
+# 🏧 Simple ATM
 
-struct UserData {
+This is a simple ATM simulation program written in C++. It allows users to input their data, check their balance, change their password, withdraw money, waste money, and view their personal information.
 
-    int password; // User's password
-    string username; // User's name
-    int balance = 0; // Balance, starts at zero
+## ✨ Features
 
-    void inputData() {
-        cout << "Enter username: "; 
-        cin >> username;
-        cout << "Enter password: "; 
-        cin >> password;
-        cout << "Enter your balance: "; 
-        cin >> balance;
-    }
-};
+- 📝 Input user data (username, password, balance)
+- 💰 Check balance
+- 🔒 Change password
+- 💸 Withdraw money
+- 🗑️ Waste money
+- 👤 View personal information
 
-// Function to withdraw money
-void withdraw(UserData& user, int amount) {
-    if (amount > user.balance) {
-        cout << "You do not have enough money for this transaction." << endl;
-    } else {
-        user.balance -= amount;
-        cout << "The amount has been withdrawn. Good day!" << endl;
-        cout << "Your balance now is: " << user.balance << endl;
-    }
-}
+## 🚀 Usage
 
-// Function to waste money
-void wasteMoney(UserData& user, int sum) {
-    cout << "You wasted: " << sum << " money!" << endl;
-    user.balance -= sum;  // Subtract the wasted money from balance
-    cout << "Your balance now is: " << user.balance << endl;
-}
+1. Compile the program using a C++ compiler:
+    ```sh
+    g++ atm.cpp -o atm
+    ```
 
-// Function to display choices
-void printChoices() {
-    cout << "1. Your balance" << endl;
-    cout << "2. Change your password" << endl;
-    cout << "3. Withdraw money" << endl;
-    cout << "4. Waste money" << endl;
-    cout << "5. Personal information" << endl;
-    cout << "6. Exit" << endl;
-}
+2. Run the compiled program:
+    ```sh
+    ./atm
+    ```
 
-int main() {
-    int userChoice;
-    UserData user;
-    user.inputData();
+3. Follow the on-screen instructions to interact with the ATM.
 
-    cout << "*** Welcome to the Simple ATM ***" << endl;
+## 📂 Code Structure
 
-    while (true) {
-        printChoices();
-        cin >> userChoice;
+- [UserData](http://_vscodecontentref_/0) struct: Stores user information such as username, password, and balance.
+- `inputData` method: Prompts the user to input their username, password, and balance.
+- [withdraw](http://_vscodecontentref_/1) function: Allows the user to withdraw money from their balance.
+- [wasteMoney](http://_vscodecontentref_/2) function: Allows the user to waste money, subtracting it from their balance.
+- [printChoices](http://_vscodecontentref_/3) function: Displays the available choices to the user.
+- [main](http://_vscodecontentref_/4) function: The entry point of the program, handles user interaction and calls the appropriate functions based on user input.
 
-        switch (userChoice) {
-        case 1:
-            cout << "Your balance is: " << user.balance << endl;
-            break;
-        case 2:
-            cout << "Enter your new password: ";
-            cin >> user.password;
-            break;
-        case 3:
-            {
-                int amount;
-                cout << "Enter amount to withdraw: ";
-                cin >> amount;
-                withdraw(user, amount);
-                break;
-            }
-        case 4:
-            {
-                int sum;
-                cout << "Enter amount to waste: ";
-                cin >> sum;
-                wasteMoney(user, sum);
-                break;
-            }
-        case 5:
-            cout << "Username: " << user.username << endl;
-            cout << "Balance: " << user.balance << endl;
-            cout << "Password: " << user.password << endl;
-            break;
-        case 6:
-            cout << "Exiting the program. Goodbye!" << endl;
-            return 0;
-        default:
-            cout << "Invalid choice, please try again." << endl;
-        }
-    }
+## 📝 Example
 
-    return 0;
-}
+```sh
+*** Welcome to the Simple ATM ***
+1. Your balance
+2. Change your password
+3. Withdraw money
+4. Waste money
+5. Personal information
+6. Exit
