@@ -27,12 +27,12 @@ This is a simple ATM simulation program written in C++. It allows users to input
 
 ## 📂 Code Structure
 
-- `UserData`(http://_vscodecontentref_/0) struct: Stores user information such as username, password, and balance.
+- `UserData` struct: Stores user information such as username, password, and balance.
 - `inputData` method: Prompts the user to input their username, password, and balance.
-- `withdraw` (http://_vscodecontentref_/1) function: Allows the user to withdraw money from their balance.
-- `wasteMoney`(http://_vscodecontentref_/2) function: Allows the user to waste money, subtracting it from their balance.
-- `printChoices`(http://_vscodecontentref_/3) function: Displays the available choices to the user.
-- `main`(http://_vscodecontentref_/4) function: The entry point of the program, handles user interaction and calls the appropriate functions based on user input.
+- `withdraw`  function: Allows the user to withdraw money from their balance.
+- `wasteMoney`function: Allows the user to waste money, subtracting it from their balance.
+- `printChoices` function: Displays the available choices to the user.
+- `main` function: The entry point of the program, handles user interaction and calls the appropriate functions based on user input.
 
 ## 📝 Example
 
